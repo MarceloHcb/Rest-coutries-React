@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80%;
+    margin-left: 10%; 
+    padding: 20px;  
+}
+.themes{
+    cursor: pointer;
+}
+@media (max-width: 600px){
+   .container{
+    font-size: 10px;
+    margin-left: 10px;
+    max-width: 100%;
+   }
+}
