@@ -30,7 +30,7 @@ export const AllElements = () => {
                     return (<>
                         <div className="element" key={index} style={{ background: theme.elements, color: theme.color }}>
                             <Link className="Link" to={`/${country.name.common}`}>
-                                <img src={country.flags.png}></img>
+                                <img src={country.flags.png} alt={country.name.common}></img>
 
                                 <div className="info" style={{ background: theme.elements, color: theme.color }}>
                                     <h2>{country.name.common}</h2>

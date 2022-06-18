@@ -1,0 +1,109 @@
+.Link {
+    width: 100%;
+}
+
+.arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;   
+}
+
+.select {
+    border: none;
+    position: relative;
+    max-width: 250px;
+    min-width: 250px;
+}
+
+#toggle {
+    display: none;
+  
+}
+#toggle:checked~.list {
+    display: block;
+}
+
+.display {
+    width: 100%;
+    padding: 20px 35px;
+    padding-right: 60px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;    
+}
+
+.list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-radius: 3px;
+    margin-top: 25px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;    
+}
+
+ul {
+    padding: 10px;
+}
+
+li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: gray;
+}
+
+.active {
+    background-color: hsl(209, 23%, 22%);
+    color: aliceblue;
+}
+.search {
+    max-width: 85%;
+    margin-left: 5%;
+    margin-top: 3%;
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.magnifyingGlass {
+    position: absolute;
+    left: 1%;
+    top: 30%;
+    cursor: pointer;
+    font-size: 20px;
+}
+.inputSearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    width: 400px;
+    padding: 15px;
+    padding-left: 60px;
+    position: relative;    
+}
+@media(max-width: 800px){
+    .search{
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-bottom: 100px;
+    }
+    .magnifyingGlass {
+        top: 10%;
+    }  
+    .inputSearch{
+        width: 300px;
+    }
+}
