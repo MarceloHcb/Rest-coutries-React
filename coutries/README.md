@@ -2,7 +2,7 @@
 
 
 ## Como rodar o projeto
-## `cd `
+## `cd  coutries`
 ### `npm start`
 
 
