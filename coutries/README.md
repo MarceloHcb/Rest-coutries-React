@@ -2,7 +2,7 @@
 
 [<img src="./coutries.gif" alt="exemplo do projeto">](https://rest-coutries.netlify.app)
 ## Como rodar o projeto
-## `cd `
+## `cd  coutries`
 ### `npm start`
 
 
