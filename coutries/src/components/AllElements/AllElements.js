@@ -9,23 +9,35 @@ export const AllElements = () => {
     const { theme } = useContext(ThemeContext)    
     const [countries, setCountries] = useState([])    
     const [url, setUrl] = useState(`${BaseUrl}`)
+    const [js, setJs] = useState(true)
     const getCountry = async () => {
+        
         const res = await fetch(url)
         const json = await res.json()
         setCountries(json)
+        if(js===false){
+            json=json.sort((a,b)=>{
+                if (a.name.common < b.name.common)
+                return -1;
+                if (a.name.common > b.name.common)
+                return 1;
+                return 0;
+            })
+        }
     }
 
     useEffect(() => {
         getCountry()
 
-    }, [url])    
+    }, [url,js])    
     
     return (<>
 
         <main className="main" style={{ background: theme.background }}>         
-        <SearchComponent setUrl={setUrl} />
+        <SearchComponent setUrl={setUrl} setJs={setJs} js={js} />
+        
             <div className="elements" style={{ background: theme.background }}  >
-
+           
                 {countries.map((country, index) => {
                     return (<>
                         <div className="element" key={index} style={{ background: theme.elements, color: theme.color }}>

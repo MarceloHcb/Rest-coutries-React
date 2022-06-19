@@ -7,6 +7,8 @@ import { ThemeContext } from "../../data/Context/theme-context/theme-context"
 export const Element = () => {
     const { theme } = useContext(ThemeContext)
     const { name } = useParams()
+    const[nm,setNm] = useState(name)
+    const [param,setParam] = useState()
     const [url, setUrl] = useState(`https://restcountries.com/v3.1/name/${name}`)
     const [coutry, setCoutry] = useState({
         name: [],
@@ -21,11 +23,10 @@ export const Element = () => {
         languages: [],
         borderCoutries:[]
     })
-
+  
     const getCountryElement = async () => {
         const res = await axios.get(url)
-        const data = await res.data[0]
-        console.log(data)
+        const data = await res.data[0]       
         
             setCoutry({
                 name: data.name.common,
@@ -39,8 +40,7 @@ export const Element = () => {
                 currencies: data.currencies,
                 languages: data.languages,
                 borderCoutries:data.borders
-            })
-      
+            })      
     }
 
     useEffect(() => {
@@ -63,7 +63,7 @@ export const Element = () => {
                         <h2><span>Sub Region:</span> {coutry.subRegion}</h2>
                         <h2><span>Capital:</span> {coutry.capital}</h2>
                         <div className="bottom-element">
-                             <div className="bottom"><h2><span>Border Coutries:</span> </h2>{coutry.borderCoutries && Object.values(coutry.borderCoutries).map((bordercoutry,index)=>{return(<div key={index} className="border">{bordercoutry}</div>)})}</div> 
+                             <div className="bottom"><h2><span>Border Coutries:</span> </h2>{coutry.borderCoutries && Object.values(coutry.borderCoutries).map((bordercoutry,index)=>{return(<div key={index} className="border" onClick={()=>setUrl(`https://restcountries.com/v3.1/alpha/${bordercoutry}`)}>{bordercoutry}</div>)})}</div> 
                         </div>
                     </div>
                     <div>

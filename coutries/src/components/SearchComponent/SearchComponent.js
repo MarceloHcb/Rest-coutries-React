@@ -30,7 +30,7 @@ export const SearchComponent = (props) => {
                     <button type="submit" className="btn"><GiMagnifyingGlass style={{ color: theme.color }} className="magnifyingGlass" /></button>
 
                 </form>
-
+                <button className="bt" onClick={() =>props.setJs(props.js===true?false :true)} style={{ background: theme.elements, color: theme.color }}><span>A-Z</span> </button>
                 <div className="select">
                     <input type={"checkbox"} id="toggle" checked={check} onClick={()=> setCheck(true)}/>
                     <label htmlFor="toggle" className="display" style={{ background: theme.elements }}>
@@ -44,7 +44,9 @@ export const SearchComponent = (props) => {
                         {names.map((name, index) => { return <li key={index} onClick={() => handleSelected(name)}>{name}</li> })}
 
                     </ul>
+                   
                 </div>
+                
             </div>
         </>
     )

@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 15px;   
+    padding: 0 15px;
 }
 
 .select {
@@ -22,8 +22,8 @@
 
 #toggle {
     display: none;
-  
 }
+
 #toggle:checked~.list {
     display: block;
 }
@@ -35,7 +35,14 @@
     position: relative;
     cursor: pointer;
     user-select: none;
-    border-radius: 5px;    
+    border-radius: 5px;
+}
+
+.bt {
+    border-radius: 5px;
+    width: 60px;
+    position: absolute;
+    bottom: 60px;
 }
 
 .list {
@@ -47,7 +54,7 @@
     border-radius: 3px;
     margin-top: 25px;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-    width: 100%;    
+    width: 100%;
 }
 
 ul {
@@ -67,15 +74,17 @@ li:hover {
     background-color: hsl(209, 23%, 22%);
     color: aliceblue;
 }
+
 .search {
     max-width: 85%;
     margin-left: 5%;
     margin-top: 3%;
-    display: flex;    
+    display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
 }
+
 .magnifyingGlass {
     position: absolute;
     left: 1%;
@@ -83,6 +92,7 @@ li:hover {
     cursor: pointer;
     font-size: 20px;
 }
+
 .inputSearch {
     display: flex;
     justify-content: center;
@@ -92,18 +102,26 @@ li:hover {
     width: 400px;
     padding: 15px;
     padding-left: 60px;
-    position: relative;    
+    position: relative;
 }
-@media(max-width: 800px){
-    .search{
+
+@media(max-width: 800px) {
+    .search {
         flex-wrap: wrap;
         gap: 40px;
         margin-bottom: 100px;
     }
+    .bt {
+        border-radius: 5px;
+        width: 60px;
+        position: absolute;
+        bottom: 115px;
+    }
     .magnifyingGlass {
         top: 10%;
-    }  
-    .inputSearch{
+    }
+
+    .inputSearch {
         width: 300px;
     }
 }
